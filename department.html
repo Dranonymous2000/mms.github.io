@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="fa/css/all.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="loginpage.css" type="text/css">
+</head>
+<body>
+    <div class="col-md-10">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" id="list_payment_btn" href="#">Payment List</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link active" id="add_payment_btn" href="#">Add New Payment</a>
+      </li>
+    </ul>
+         <table class="table" id="list_payment">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Patient Name</th>
+                                <th>Patient ID</th>  
+                                <th>Patient Phone Number</th>  
+                                <th>Total Amount</th>  
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>0001</td>
+                                <td >Adamu Garba</td>
+                                <td>1P78RD</td>
+                                <td>09137846539</td>
+                                <td>15,000</td>
+                               
+                                <td data-label="Options">
+                                    <a class="btn btn-primary" href="">Edit</a>
+                                    <a class="btn btn-danger" href="">Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>0001</td>
+                                <td >Uche okon</td>
+                                <td>1P98RD</td>
+                                <td>08093846539</td>
+                                <td>9,000</td>
+                               
+                                <td data-label="Options">
+                                    <a class="btn btn-primary" href="">Edit</a>
+                                    <a class="btn btn-danger" href="">Delete</a>
+                                </td>
+                                </tr>
+                                
+                        </tbody>
+                    </table>  
+                    <div id="add_payment" style="display: none;">
+                        <form action="" method="post">
+                            <div>
+                                <label for="">Patient Name</label>
+                                <input type="text" class="form-label enter" name="Patientname">
+                                
+                                <label for="">Patient Number</label>
+                                <input type="text" class="form-label enter" name="patientNumber">
+                            </div>
+                      
+                            <div>
+                                <label for="">Date</label>
+                                <input type="date" class="form-label enter" name="date">
+                                
+                                <label for="">Doctor In-charge</label>
+                                <input type="text" class="form-label enter" name="doctorName">
+                            </div>
+                            <div>
+                                <label for="">Lab test </label>
+                                <input type="number" class="form-label enter" name="Lab test">
+                                <label for="">X-raytest </label>
+                                <input type="number" class="form-label enter" name="Lab test">
+                            </div>
+                            <div>
+                                <label for="">Service Info</label>
+                                <input type="text" class="form-label enter" name="">
+                                <label for="">Quality </label>
+                                <input type="number" class="form-label enter" name="">
+                            </div>
+                            <div>
+                                <label for="">Price </label>
+                                <input type="number" class="form-label enter" name="Lab test">
+                                <label for="">Total Amt </label>
+                                <input type="number" class="form-label enter" name="Lab test">
+                            </div>
+                            <input type="button" class="btn btn-success form-label enter" value="Save Invoice">
+                        </form>
+                    </div>        
+    </div>
+
+    <script src="jquery.js" type="text/javascript">
+		
+    </script>
+   
+    <script type="text/javascript">
+     $(document).ready(function(){
+      $("#list_payment_btn").click(function(){
+         $("#list_payment").show();
+         $("#add_payment").hide();
+      })
+      $("#add_payment_btn").click(function(){
+         $("#list_payment").hide();
+         $("#add_payment").show();
+      })
+   
+    })
+     </script>
+               
+    
+</body>
+</html>

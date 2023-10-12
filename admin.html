@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="fa/css/all.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="loginpage.css" type="text/css">
+</head>
+<body>
+    <!-- this row contain the title and the header -->
+    <div class="row">         
+                <div class="col-md-12 firstframe">
+                  
+                     <img src="images/laglogo.webp" alt="lagoslogo" class="laglogo">
+                       
+                     <h1 class="lasuth"> STATE UNIVERSITY TEACHING HOSPITAL</h1>
+                    
+                </div>
+         </div>
+         <!-- this row contain the sidebars and the  -->
+         <div class="row">
+        <div class="col-md-2 secondframe">
+             <div class="col frameone">
+                <!-- this is this side bar button -->        
+                <div class="list-group newlist"> 
+                    <button type="button" class="list-group-item list-group-item-action active dash"aria-current="true" id="dashboard_reset" >
+                        <i class="fa-solid fa-desktop icon"></i>Admin Dashboard 
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action"> <i class="fa-regular fa-building icon"></i> Department</button>
+                    <button type="button" class="list-group-item list-group-item-action"> <i class="fa-solid fa-user-doctor icon"></i>Doctor</button>             
+                    <button type="button" class="list-group-item list-group-item-action"> <i class="fa-solid fa-hospital-user icon"></i>Patient</button>
+                    <button type="button" class="list-group-item list-group-item-action"> <i class="fa-solid fa-calendar-check icon"></i>Appointment</button>             
+                    <button type="button" class="list-group-item list-group-item-action"> <i class="fa-solid fa-flask-vial icon"></i>Laboratory</button>
+                    <button type="button" class="list-group-item list-group-item-action"> <i class="fa-solid fa-prescription icon"></i>Pharmacist</button>              
+                    <button type="button" class="list-group-item list-group-item-action"> <i class="fa-solid fa-x-ray icon"></i>Radiology</button>
+                    <button type="button" class="list-group-item list-group-item-action"> <i class="fa-solid fa-credit-card icon"></i>Payment</button>
+                    <button type="button" class="list-group-item list-group-item-action"> <i class="fa-solid fa-sliders icon"></i>Settings</button>  
+                    <button type="button" class="list-group-item list-group-item-action"> <i class="fa-solid fa-id-card icon"></i>Profile</button>
+                    <button type="button" class="list-group-item list-group-item-action"> <i class="fa-solid fa-arrow-right-from-bracket icon"></i>Log out</button>    
+                </div>
+            </div>
+        </div>
+        <!-- the other page beside the side bar -->
+        <div class="col-md-10">
+                
+                <div class="row parent" id="firstrow">
+                    <div class="col-md-2 option child" id="department">
+                        <i class="fa-regular fa-building fa-2x icons"></i>
+                        <p class="title">Department</p>
+                    </div>
+                     <div class="col-md-2 option child" id="doctor">
+                      <i class="fa-solid fa-user-doctor fa-2x icons"></i>
+                        <p class="title">Doctors</p>
+                     </div>
+                     <div class="col-md-2 option child" id="staff">
+                        <i class="fa-solid fa-user-nurse fa-2x icons"></i>
+                        <p class="title">Staff</p>
+                     </div>
+                     <div class="col-md-2 option child" id="patient">
+                        <i class="fa-solid fa-hospital-user fa-2x icons"></i>
+                        <p class="title"> Patient</p>
+                     </div>
+                     
+                     <div class="col-md-2 option child" id="appointment">
+                        <i class="fa-regular fa-calendar-check fa-2x icons"></i>
+                        <p class="title">Appointment</p>
+                    </div>
+                </div>
+                <div class="row parent"  id="secondrow">
+                    <div class="col-md-2 option child" id="pharmacy">
+                        <i class="fa-solid fa-prescription fa-2x icons"></i>
+                        <p class="title">Pharmacy</p>
+                    </div>
+                     <div class="col-md-2 option child" id="radiology">
+                        <i class="fa-solid fa-x-ray fa-2x icons"></i>
+                        <p class="title">Radiology</p>
+                     </div>
+                     <div class="col-md-2 option child" id="laboratory">
+                        <i class="fa-solid fa-flask fa-2x icons"></i>
+                        <p class="title">Laboratory</p>
+                     </div>
+                     <div class="col-md-2 option child" id="payment">
+                        <i class="fa-solid fa-credit-card fa-2x icons"></i>
+                        <p class="title">Payment</p>
+                     </div>
+                    <div class="col-md-2 option child "id="settings">
+                     <i class="fa-solid fa-sliders fa-2x icons"></i>
+                     <p class="title">  Settings</p>
+                  </div>
+              </div>
+              <!-- department_items Number stand for each this and counting from left to rights -->
+              <div class="row" id="department_item1" style="display: none;">
+
+               <div class="col-md-10">
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="list_btn" href="#">Department List</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link active" id="add_btn" href="#">Add New Department</a>
+                    </li>
+                  </ul>
+                       <table class="table" id="list_dept">
+                                      <thead>
+                                          <tr>
+                                              <th>ID</th>
+                                              <th>Name</th>
+                                              <th>Description</th>
+                                              <th>Options</th>
+                                              <!-- <th>Doctors</th> -->
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                          <td data-label="ID">0001</td>
+                                              <td data-label="Name">Nuerology</td>
+                                              <td data-label="Description">They deal with patient like epilepsy,stroke etc</td>
+                                              <td data-label="Options">
+                                                  <a class="btn btn-primary" href="">Edit</a>
+                                                  <a class="btn btn-danger" href="">Delete</a>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td data-label="ID">0002</td>
+                                              <td data-label="Name">A&E Department</td>
+                                              <td data-label="Description">They deal with accident and emergency patient</td>
+                                              <td data-label="Options">
+                                                  <a class="btn btn-primary" href="">Edit</a>
+                                                  <a class="btn btn-danger" href="">Delete</a>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td data-label="ID">0003</td>
+                                              <td data-label="Name">physiotherapy</td>
+                                              <td data-label="Description">They deal with patient like stroke etc</td>
+                                              <td data-label="Options">
+                                                  <a class="btn btn-primary" href="">Edit</a>
+                                                  <a class="btn btn-danger" href="">Delete</a>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td data-label="ID">0004</td>
+                                              <td data-label="Name">Surgery</td>
+                                              <td data-label="Description">They deal with surgery</td>
+                                              <td data-label="Options">
+                                                  <a class="btn btn-primary" href="">Edit</a>
+                                                  <a class="btn btn-danger" href="">Delete</a>
+              
+                                              </td>
+                                          </tr>
+                                      </tbody>
+                                  </table>  
+                                  <div id="add_dept" style="display: none;">
+                                      <form action="" method="post">
+                                          <h2 class="text-center">LASUTH</h2>
+                                          <p class="text-center">Fill the follwwing to add new departmen</p>
+                                          <label for="Username">Department Name</label>
+                                          <input type="text" class="form-control enter">
+                                          <label for="password"> Department Description</label>
+                                          <input type="text" class="form-control enter">
+                                          <input type="button" class="btn btn-success form-control enter" value="Add New Department">
+                                      </form>
+                                  </div>         
+                  </div>
+                  
+                   
+               </div>
+               <div class="row" id="department_item2" style="display:none;">
+                  
+                  <div class="col-md-10">
+                     <ul class="nav nav-tabs">
+                       <li class="nav-item">
+                         <a class="nav-link active" id="list_doc_btn" href="#">Doctor List</a>
+                       </li>
+                       <li class="nav-item">
+                          <a class="nav-link active" id="add_doc_btn" href="#">Add New Doctor</a>
+                       </li>
+                     </ul>
+                          <table class="table" id="list_doc_dept">
+                                         <thead>
+                                             <tr>
+                                                 <th>ID</th>
+                                                 <th> Doctor Name</th>
+                                                 <th>Department Name</th>
+                                                 
+                                                 <th>Options</th>
+                                             </tr>
+                                         </thead>
+                                         <tbody>
+                                             <tr>
+                                             <td data-label="ID">0001</td>
+                                             <td> Dr Ogunjimi</td>
+                                                 <td data-label="Name">Nuerology</td>
+                                                 
+                                                 <td data-label="Options">
+                                                     <a class="btn btn-primary" href="">Edit</a>
+                                                     <a class="btn btn-danger" href="">Delete</a>
+                                                 </td>
+                                             </tr>
+                                             <tr>
+                                                 <td data-label="ID">0002</td>
+                                                 <td> Dr Alabi</td> 
+                                                 <td data-label="Name">A&E Department</td>
+                                                 <td data-label="Options">
+                                                     <a class="btn btn-primary" href="">Edit</a>
+                                                     <a class="btn btn-danger" href="">Delete</a>
+                                                 </td>
+                                                 
+                                             </tr>
+                                             <tr>
+                                                 <td data-label="ID">0003</td>
+                                                 <td> Dr Muritala</td> 
+                                                 <td data-label="Name">physiotherapy</td>
+                                                 <td data-label="Options">
+                                                     <a class="btn btn-primary" href="">Edit</a>
+                                                     <a class="btn btn-danger" href="">Delete</a>
+                                                 </td>
+                                             </tr>
+                                             <tr>
+                                                 <td data-label="ID">0004</td>
+                                                 <td> Dr Kale</td>
+                                                 <td data-label="Name">Surgery</td>
+                                                 <td data-label="Options">
+                                                     <a class="btn btn-primary" href="">Edit</a>
+                                                     <a class="btn btn-danger" href="">Delete</a>
+                 
+                                                 </td>
+                                             </tr>
+                                         </tbody>
+                                     </table>  
+                                     <div id="add_doc_dept" style="display: none;">
+                                         <form action="" method="post">
+                                            
+                                             <label for="Username">Doctor Name</label>
+                                             <input type="text" class="form-control enter">
+                                             <label for="text"> Departmant</label>
+                                             <input type="text" class="form-control enter">
+                                             <label for="text"> Email</label>
+                                             <input type="text" class="form-control enter">
+                                             <label for="address">Address</label>
+                                             <input type="text" class="form-control enter">
+                                             <label for="number"> Phone Number</label>
+                                             <input type="number" class="form-control enter">
+                                             <label for="Profile"> Profile</label>
+                                             <input type="text" class="form-control enter">
+                                             <label for="password">Password</label>
+                                             <input type="padssword" class="form-control enter">
+                                             <input type="button" class="btn btn-success form-control enter" value="Add New Doctor">
+                                         </form>
+                                     </div>        
+                     </div>
+
+               </div>
+               <div class="row" id="department_item3" style="display: none;">
+                  <div class="col-md-10">
+                     <ul class="nav nav-tabs">
+                       <li class="nav-item">
+                         <a class="nav-link active" id="list_staff_btn" href="#">Staff List</a>
+                       </li>
+                       <li class="nav-item">
+                          <a class="nav-link active" id="add_staff_btn" href="#">Add New Staff</a>
+                       </li>
+                     </ul>
+                          <table class="table" id="list_staff_dept">
+                                         <thead>
+                                             <tr>
+                                                 <th>ID</th>
+                                                 <th>Department</th>
+                                                 
+                                                 
+                                                 <th>Staff</th>
+                                                 <th>Options</th>
+                                             </tr>
+                                         </thead>
+                                         <tbody>
+                                             <tr>
+                                             <td data-label="ID">0001</td>
+                                                 <td data-label="Name">Nurse</td>
+                                                 <td>
+                                                    Mrs adeyemo 
+                                                 </td>
+                                                 <td data-label="Options">
+                                                     <a class="btn btn-primary" href="">Edit</a>
+                                                     <a class="btn btn-danger" href="">Delete</a>
+                                                 </td>
+                                             </tr>
+                                             <tr>
+                                                 <td data-label="ID">0002</td>
+                                                 <td data-label="Name">Admin</td>
+                                                
+                                                 <td>
+                                                    Mrs Adesanya   
+                                                 </td>
+                                                 <td data-label="Options">
+                                                     <a class="btn btn-primary" href="">Edit</a>
+                                                     <a class="btn btn-danger" href="">Delete</a>
+                                                 </td>
+                                                 
+                                             </tr>
+                                             <tr>
+                                                 <td data-label="ID">0003</td>
+                                                 <td data-label="Name">Physi</td>
+                                                 <td>
+                                                 Mrs kolawole 
+                                                 </td>
+                                                 <td data-label="Options">
+                                                     <a class="btn btn-primary" href="">Edit</a>
+                                                     <a class="btn btn-danger" href="">Delete</a>
+                                                 </td>
+                                             </tr>
+                                             <tr>
+                                                 <td data-label="ID">0004</td>
+                                                 <td data-label="Name">Lab</td>
+                                                 <td>
+                                                    Mrs Adams  
+                                                 </td>
+                                                 <td data-label="Options">
+                                                     <a class="btn btn-primary" href="">Edit</a>
+                                                     <a class="btn btn-danger" href="">Delete</a>
+                 
+                                                 </td>
+                                             </tr>
+                                         </tbody>
+                                     </table>  
+                                     <div id="add_staff_dept" style="display: none;">
+                                         <form action="" method="post">
+                                            
+                                             <label for="Username">Staff Name</label>
+                                             <input type="text" class="form-control enter">
+                                             <label for="text"> Departmant</label>
+                                             <input type="text" class="form-control enter">
+                                             <label for="text"> Email</label>
+                                             <input type="text" class="form-control enter">
+                                             <label for="address">Address</label>
+                                             <input type="text" class="form-control enter">
+                                             <label for="number"> Phone Number</label>
+                                             <input type="number" class="form-control enter">
+                                             <label for="Profile"> Profile</label>
+                                             <input type="text" class="form-control enter">
+                                             <label for="password">Password</label>
+                                             <input type="padssword" class="form-control enter">
+                                             <input type="button" class="btn btn-success form-control enter" value="Add New Doctor">
+                                         </form>
+                                     </div>        
+                     </div>
+
+               </div>
+               <div class="row" id="department_item4" style="display: none;">
+                  <div class="col-md-10">
+                     <ul class="nav nav-tabs">
+                       <li class="nav-item">
+                         <a class="nav-link active" id="list_patient_btn" href="#">Patient List</a>
+                       </li>
+                       <li class="nav-item">
+                          <a class="nav-link active" id="add_patient_btn" href="#">Add New Patient</a>
+                       </li>
+                     </ul>
+                          <table class="table" id="list_patient_dept">
+                                         <thead>
+                                             <tr>
+                                                 <th>ID</th>
+                                                 <th>Name</th>
+                                                 <th>Phone</th>
+                                                 <th>Date of Birth</th>
+                                                 <th>Address</th>
+                                                 <th>Vital sign</th>
+                                                 <th>Options</th>
+                                             </tr>
+                                         </thead>
+                                         <tbody>
+                                             <tr>
+                                             <td data-label="ID">0001</td>
+                                                 <td data-label="Name"> Alao Adekunle</td>
+                                                 <td>08070672625 </td>
+                                                 <td>20th, january,2000 </td>
+                                                 <td>Ikeja Lagos </td>
+                                                 <td data-label="Options">
+                                                     <a class="btn btn-warning" href="">View Vital</a>   
+                                                 </td>
+                                                 <td data-label="Options">
+                                                     <a class="btn btn-primary" href="">Edit</a>
+                                                     <a class="btn btn-danger" href="">Delete</a>
+                                                 </td>
+                                             </tr>
+                                             <tr>
+                                                 <td data-label="ID">0002</td>
+                                                     <td data-label="Name"> Alakija James</td>
+                                                     <td>08020972625 </td>
+                                                     <td>17th,March,2000 </td>
+                                                     <td>ikorodu, Lagos </td>
+                                                     <td data-label="Options">
+                                                         <a class="btn btn-warning" href="">View Vital</a>   
+                                                     </td>
+                                                     <td data-label="Options">
+                                                         <a class="btn btn-primary" href="">Edit</a>
+                                                         <a class="btn btn-danger" href="">Delete</a>
+                                                     </td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td data-label="ID">0003</td>
+                                                         <td data-label="Name"> ikechukwu Daniel</td>
+                                                         <td>08080572625 </td>
+                                                         <td>5th,December,1999 </td>
+                                                         <td>ijebu, Ogun </td>
+                                                         <td data-label="Options">
+                                                             <a class="btn btn-warning" href="">View Vital</a>   
+                                                         </td>
+                                                         <td data-label="Options">
+                                                             <a class="btn btn-primary" href="">Edit</a>
+                                                             <a class="btn btn-danger" href="">Delete</a>
+                                                         </td>
+                                                     </tr>
+                                                     <tr>
+                                                         <td data-label="ID">0004</td>
+                                                             <td data-label="Name"> Bala Audu</td>
+                                                             <td>0809022625 </td>
+                                                             <td>9th,Febuary,1995 </td>
+                                                             <td>Abeokuta, Ogun </td>
+                                                             <td data-label="Options">
+                                                                 <a class="btn btn-warning" href="">View Vital</a>   
+                                                             </td>
+                                                             <td data-label="Options">
+                                                                 <a class="btn btn-primary" href="">Edit</a>
+                                                                 <a class="btn btn-danger" href="">Delete</a>
+                                                             </td>
+                                                         </tr>
+                                         </tbody>
+                                     </table>  
+                                     <div id="add_patient_dept" style="display: none;">
+                                         <form action="" method="post">
+                                             <input type="text" class="form-control enter" value="Identification Number">
+                                             <input type="text" class="form-control enter" value="Name">
+                                             <input type="Text" class="form-control enter" value="PhoneNumber">
+                                             <input type="text" class="form-control enter" value="Email"> 
+                                             <input type="text" class="form-control enter" value="Address">
+                                             
+                                             <input type="date" class="form-control enter" value="Date of Birth">
+                                             <input type="padssword" class="form-control enter"value="Password">
+                                             <input type="button" class="btn btn-success form-control enter" value="Add New Doctor">
+                                         </form>
+                                     </div>        
+                     </div>
+               </div>
+               <div class="row" id="department_item5" style="display: none;">
+
+                  <div class="col-md-10">
+                     <ul class="nav nav-tabs">
+                       <li class="nav-item">
+                         <a class="nav-link active" id="list_appointment_btn" href="#">Appointment List</a>
+                       </li>
+                       <li class="nav-item">
+                          <a class="nav-link active" id="add_appointment_btn" href="#">Add New Appointment</a>
+                       </li>
+                     </ul>
+                          <table class="table" id="list_appointment">
+                                         <thead>
+                                             <tr>
+                                                 <th>ID</th>
+                                                 <th>Patient Name</th>
+                                                 <th>Doctor Name</th>
+                                                 <th>Description</th>
+                                                 <th>Date of Appointement</th>
+                                                 <th>Status</th>
+                                                 <th>Options</th>
+                                             </tr>
+                                         </thead>
+                                         <tbody>
+                                             <tr>
+                                             <td data-label="ID">0001</td>
+                                                 <td >Alao Adekunle</td>
+                                                 <td>Dr Ogunjimi</td>
+                                                 <td>Pain Incresing and Headache</td>
+                                                 <td>25th, August,2023</td>
+                                                 <td data-label="Options">
+                                                     <a class="btn btn-success" href="">Approved</a>   
+                                                 </td>
+                                                 <td data-label="Options">
+                                                     <a class="btn btn-primary" href="">Edit</a>
+                                                     <a class="btn btn-danger" href="">Delete</a>
+                                                 </td>
+                                             </tr>
+                                             <tr>
+                                                 <td data-label="ID">0002</td>
+                                                     <td >Bala Audu</td>
+                                                     <td>Dr Alabi</td>
+                                                     <td>Pain Incresing and Headache</td>
+                                                     <td>5th, August,2023</td>
+                                                     <td data-label="Options">
+                                                         <a class="btn btn-success" href="">Approved</a>   
+                                                     </td>
+                                                     <td data-label="Options">
+                                                         <a class="btn btn-primary" href="">Edit</a>
+                                                         <a class="btn btn-danger" href="">Delete</a>
+                                                     </td>
+                                                 </tr>
+                                                 
+                                         </tbody>
+                                     </table>  
+                                     <div id="add_appointment" style="display: none;">
+                                         <form action="" method="post">
+                                             <label for="">Identification Number</label>
+                                             <input type="Number" class="form-control enter" Name="appointment number">
+                                             <label for="">Patient Name</label>
+                                             <input type="text" class="form-control enter" name="Patientname">
+                                             <label for="">Doctor Name</label>
+                                             <input type="Text" class="form-control enter" name="Doctorname">
+                                             <label for="">Drescription</label>
+                                             <input type="text" class="form-control enter" name="Description"> 
+                                             
+                                             <label for="">Date of appointment</label>
+                                             <input type="date" class="form-control enter" value="Date of appointment">
+                                             
+                                             <input type="button" class="btn btn-success form-control enter" value="Add New Appointement">
+                                         </form>
+                                     </div>        
+                     </div>
+
+               </div>
+               <div class="row" id="department_item6" style="display: none;">
+                <div class="col-md-10">
+                    <ul class="nav nav-tabs">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="list_pharmacy_btn" href="#">Pharmacy List</a>
+                      </li>
+                      <li class="nav-item">
+                         <a class="nav-link active" id="add_pharmacy_btn" href="#">Add New Pharmacy</a>
+                      </li>
+                    </ul>
+                         <table class="table" id="list_pharmacy">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Pharmacy Name</th>
+                                                <th>Pharmacy Location</th>  
+                                                <th>Options</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <td>0001</td>
+                                                <td >MyHealth pharmacy</td>
+                                                <td>A&E Building</td>
+                                               
+                                                <td data-label="Options">
+                                                    <a class="btn btn-primary" href="">Edit</a>
+                                                    <a class="btn btn-danger" href="">Delete</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="ID">0002</td>
+                                                    <td >Blooms</td>
+                                                    <td>GOPD BUilding</td>
+                                                    <td data-label="Options">
+                                                        <a class="btn btn-primary" href="">Edit</a>
+                                                        <a class="btn btn-danger" href="">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                
+                                        </tbody>
+                                    </table>  
+                                    <div id="add_pharmacy" style="display: none;">
+                                        <form action="" method="post">
+                                            <label for="">Pharmacy Name</label>
+                                            <input type="text" class="form-control enter" name="Patientname">
+                                            <label for="">Pharmacy Location</label>
+                                            <input type="Text" class="form-control enter" name="Doctorname">
+                                           
+                                       
+                                            
+                                            <input type="button" class="btn btn-success form-control enter" value="Add New Pharmacy">
+                                        </form>
+                                    </div>        
+                    </div>
+
+               </div>
+               <div class="row" id="department_item7" style="display: none;">
+                <div class="col-md-10">
+                    <ul class="nav nav-tabs">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="list_radiology_btn" href="#">Radiology List</a>
+                      </li>
+                      <li class="nav-item">
+                         <a class="nav-link active" id="add_radiology_btn" href="#">Add New Radiology</a>
+                      </li>
+                    </ul>
+                         <table class="table" id="list_radiology">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Radiology Name</th>
+                                                <th>Radiology Location</th>  
+                                                <th>Options</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <td>0001</td>
+                                                <td >Radiology 1</td>
+                                                <td>Radiology  Building</td>
+                                               
+                                                <td data-label="Options">
+                                                    <a class="btn btn-primary" href="">Edit</a>
+                                                    <a class="btn btn-danger" href="">Delete</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="ID">0002</td>
+                                                    <td >Radiology building</td>
+                                                    <td>GOPD BUilding</td>
+                                                    <td data-label="Options">
+                                                        <a class="btn btn-primary" href="">Edit</a>
+                                                        <a class="btn btn-danger" href="">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                
+                                        </tbody>
+                                    </table>  
+                                    <div id="add_radiology" style="display: none;">
+                                        <form action="" method="post">
+                                            <label for="">Radiology Name</label>
+                                            <input type="text" class="form-control enter" name="Patientname">
+                                            <label for="">Radiology Location</label>
+                                            <input type="Text" class="form-control enter" name="Doctorname">
+                                           
+                                       
+                                            
+                                            <input type="button" class="btn btn-success form-control enter" value="Add New Pharmacy">
+                                        </form>
+                                    </div>        
+                    </div>
+
+               </div>
+               <div class="row" id="department_item8" style="display: none;">
+                <div class="col-md-10">
+                    <ul class="nav nav-tabs">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="list_laboratory_btn" href="#">Laboratry List</a>
+                      </li>
+                      <li class="nav-item">
+                         <a class="nav-link active" id="add_laboratory_btn" href="#">Add New Laboratory</a>
+                      </li>
+                    </ul>
+                         <table class="table" id="list_laboratory">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>LaboratoryName</th>
+                                                <th>laboratory Location</th>  
+                                                <th>Options</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <td>0001</td>
+                                                <td >laboratory 1</td>
+                                                <td>Main laboratory </td>
+                                               
+                                                <td data-label="Options">
+                                                    <a class="btn btn-primary" href="">Edit</a>
+                                                    <a class="btn btn-danger" href="">Delete</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="ID">0002</td>
+                                                    <td >laboratory 2</td>
+                                                    <td>CMPC Laboratory</td>
+                                                    <td data-label="Options">
+                                                        <a class="btn btn-primary" href="">Edit</a>
+                                                        <a class="btn btn-danger" href="">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                
+                                        </tbody>
+                                    </table>  
+                                    <div id="add_laboratory" style="display: none;">
+                                        <form action="" method="post">
+                                            <label for="">laboratory Name</label>
+                                            <input type="text" class="form-control enter" name="Patientname">
+                                            <label for="">laboratory Location</label>
+                                            <input type="Text" class="form-control enter" name="Doctorname">
+                                           
+                                       
+                                            
+                                            <input type="button" class="btn btn-success form-control enter" value="Add New Pharmacy">
+                                        </form>
+                                    </div>        
+                    </div>
+
+               </div>
+               <div class="row" id="department_item9" style="display: none;">
+                <div class="col-md-10">
+                    <ul class="nav nav-tabs">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="list_payment_btn" href="#">Payment List</a>
+                      </li>
+                      <li class="nav-item">
+                         <a class="nav-link active" id="add_payment_btn" href="#">Add New Payment</a>
+                      </li>
+                    </ul>
+                         <table class="table" id="list_payment">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Patient Name</th>
+                                                <th>Patient ID</th>  
+                                                <th>Patient Phone Number</th>  
+                                                <th>Total Amount</th>  
+                                                <th>Options</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <td>0001</td>
+                                                <td >Adamu Garba</td>
+                                                <td>1P78RD</td>
+                                                <td>09137846539</td>
+                                                <td>15,000</td>
+                                               
+                                                <td data-label="Options">
+                                                    <a class="btn btn-primary" href="">Edit</a>
+                                                    <a class="btn btn-danger" href="">Delete</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>0001</td>
+                                                <td >Uche okon</td>
+                                                <td>1P98RD</td>
+                                                <td>08093846539</td>
+                                                <td>9,000</td>
+                                               
+                                                <td data-label="Options">
+                                                    <a class="btn btn-primary" href="">Edit</a>
+                                                    <a class="btn btn-danger" href="">Delete</a>
+                                                </td>
+                                                </tr>
+                                                
+                                        </tbody>
+                                    </table>  
+                                    <div id="add_payment" style="display: none;">
+                                        <form action="" method="post">
+                                            <div>
+                                                <label for="">Patient Name</label>
+                                                <input type="text" class="form-label enter" name="Patientname">
+                                                
+                                                <label for="">Patient Number</label>
+                                                <input type="text" class="form-label enter" name="patientNumber">
+                                            </div>
+                                      
+                                            <div>
+                                                <label for="">Date</label>
+                                                <input type="date" class="form-label enter" name="date">
+                                                
+                                                <label for="">Doctor In-charge</label>
+                                                <input type="text" class="form-label enter" name="doctorName">
+                                            </div>
+                                            <div>
+                                                <label for="">Lab test </label>
+                                                <input type="number" class="form-label enter" name="Lab test">
+                                                <label for="">X-raytest </label>
+                                                <input type="number" class="form-label enter" name="Lab test">
+                                            </div>
+                                            <div>
+                                                <label for="">Service Info</label>
+                                                <input type="text" class="form-label enter" name="">
+                                                <label for="">Quality </label>
+                                                <input type="number" class="form-label enter" name="">
+                                            </div>
+                                            <div>
+                                                <label for="">Price </label>
+                                                <input type="number" class="form-label enter" name="Lab test">
+                                                <label for="">Total Amt </label>
+                                                <input type="number" class="form-label enter" name="Lab test">
+                                            </div>
+                                            <input type="button" class="btn btn-success form-label enter" value="Save Invoice">
+                                        </form>
+                                    </div>        
+                    </div>
+
+               </div>
+            
+
+        </div>
+ </div>
+       
+
+    
+        
+        
+      
+ <script src="jquery.js" type="text/javascript">
+		
+ </script>
+
+ <script type="text/javascript">
+  $(document).ready(function(){
+   $("#department").click(function(){
+      $("#firstrow").hide();
+      $("#secondrow").hide();
+      $("#department_item1").show();
+   })
+   $("#doctor").click(function(){
+      $("#firstrow").hide();
+      $("#secondrow").hide();
+      $("#department_item2").show();
+   })
+   $("#staff").click(function(){
+      $("#firstrow").hide();
+      $("#secondrow").hide();
+      $("#department_item3").show();
+   })
+   $("#patient").click(function(){
+      $("#firstrow").hide();
+      $("#secondrow").hide();
+      $("#department_item4").show();
+   })
+   $("#appointment").click(function(){
+      $("#firstrow").hide();
+      $("#secondrow").hide();
+      $("#department_item5").show();
+   })
+   $("#pharmacy").click(function(){
+      $("#firstrow").hide();
+      $("#secondrow").hide();
+      $("#department_item6").show();
+   })
+   $("#radiology").click(function(){
+      $("#firstrow").hide();
+      $("#secondrow").hide();
+      $("#department_item7").show();
+   })
+   $("#laboratory").click(function(){
+      $("#firstrow").hide();
+      $("#secondrow").hide();
+      $("#department_item8").show();
+   })
+   $("#payment").click(function(){
+      $("#firstrow").hide();
+      $("#secondrow").hide();
+      $("#department_item9").show();
+   })
+$("#dashboard_reset").click(function(){
+   $("#firstrow").show();
+   $("#secondrow").show();
+   $("#department_item1").hide();
+   $("#department_item2").hide();
+   $("#department_item3").hide();
+   $("#department_item4").hide();
+   $("#department_item5").hide();
+   $("#department_item6").hide();
+   $("#department_item7").hide();
+   $("#department_item8").hide();
+   $("#department_item9").hide();
+})
+   $("#list_btn").click(function(){
+   $("#list_dept").show();
+   $("#add_dept").hide();
+      })
+   $("#add_btn").click(function(){
+   $("#list_dept").hide();
+   $("#add_dept").show();
+      })
+   $("#list_doc_btn").click(function(){
+   $("#list_doc_dept").show();
+   $("#add_doc_dept").hide();
+      })
+   $("#add_doc_btn").click(function(){
+   $("#list_doc_dept").hide();
+   $("#add_doc_dept").show();
+      })
+   $("#list_staff_btn").click(function(){
+   $("#list_staff_dept").show();
+   $("#add_staff_dept").hide();
+      })
+   $("#add_staff_btn").click(function(){
+   $("#list_staff_dept").hide();
+   $("#add_staff_dept").show();
+      })
+   $("#list_patient_btn").click(function(){
+   $("#list_patient_dept").show();
+   $("#add_patient_dept").hide();
+      })
+   $("#add_patient_btn").click(function(){
+   $("#list_patient_dept").hide();
+   $("#add_patient_dept").show();
+      })
+   $("#list_appointment_btn").click(function(){
+   $("#list_appointment").show();
+   $("#add_appointment").hide();
+      })
+   $("#add_appointment_btn").click(function(){
+   $("#list_appointment").hide();
+   $("#add_appointment").show();
+      })
+    $("#list_pharmacy_btn").click(function(){
+    $("#list_pharmacy").show();
+    $("#add_pharmacy").hide();
+      })
+    $("#add_pharmacy_btn").click(function(){
+    $("#list_pharmacy").hide();
+    $("#add_pharmacy").show();
+      })
+    $("#list_radiology_btn").click(function(){
+    $("#list_radiology").show();
+    $("#add_radiology").hide();
+      })
+    $("#add_radiology_btn").click(function(){
+    $("#list_radiology").hide();
+    $("#add_radiology").show();
+      })
+    $("#list_laboratory_btn").click(function(){
+    $("#list_laboratory").show(); 
+    $("#add_laboratory").hide();
+      })
+    $("#add_laboratory_btn").click(function(){
+    $("#list_laboratory").hide();
+    $("#add_laboratory").show();
+      })
+    $("#list_payment_btn").click(function(){
+    $("#list_payment").show();
+    $("#add_payment").hide();
+      })
+    $("#add_payment_btn").click(function(){
+    $("#list_payment").hide();
+    $("#add_payment").show();
+      })
+   
+ })
+  </script>
+            
+       
+            
+       
+
+    
+</body>
+</html>

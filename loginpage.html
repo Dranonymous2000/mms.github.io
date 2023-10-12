@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="fontawesome/css/all.css" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" href="loginpage.css" type="text/css">
+</head>
+<body>
+    <div class="container2" id="overlay">
+        <div class="row">
+            <div class="col-md-10">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary navedit">
+                        <div class="container-fluid">
+                          <div class="collapse navbar-collapse this" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link navlist"  href="index.html">HOME</a>
+                                  </li>
+                              <li class="nav-item">
+                                <a class="nav-link active navlist"  id="one" href="#">PATIENT'S LOGIN</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link navlist" id="two" href="#">DOCTOR'S LOGIN</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link navlist" id="three"  href="#">ADMINISTRATOR LOGIN</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </nav>
+                </div>
+            </div>
+            <div class="col-md-6">
+             <div id="reg1" >
+                <form action="" method="post"  class="fill">
+                    <h2 class="text-center">LASUTH</h2>
+                    <p class="text-center">Enter your email and password to access Patient portal</p>
+                    <label for="Username">Patient ID</label>
+                    <input type="text" class="form-control enter">
+                    <label for="password"> Password</label>
+                    <input type="password" class="form-control enter">
+                    <input type="button" class="btn btn-success form-control enter" value="Log in">
+
+                    <a href="" class="forgetpass"> Forget your password?</a>  
+
+                </form>
+            </div>
+                <div id="reg2" style="display: none;">
+                <form action="" method="post" class="fill" >
+                    <h2 class="text-center">LASUTH</h2>
+                    <p class="text-center">Enter your email and password to access Patient portal</p>
+                    <label for="Username">Doctor's ID</label>
+                    <input type="text" class="form-control enter">
+                    <label for="password"> Password</label>
+                    <input type="password" class="form-control enter">
+                    <input type="button" class="btn btn-success form-control enter" value="Log in">
+
+                    <a href="" class="forgetpass"> Forget your password?</a>  
+
+                </form>
+            </div>
+            <div id="reg3" style="display: none;">
+                <form action="" method="post" class="fill" >
+                    <h2 class="text-center">LASUTH</h2>
+                    <p class="text-center">Enter your email and password to access Patient portal</p>
+                    <label for="Username">Admin</label>
+                    <input type="text" class="form-control enter">
+                    <label for="password"> Password</label>
+                    <input type="password" class="form-control enter">
+                    <input type="button" class="btn btn-success form-control enter" value="Log in">
+
+                    <a href="" class="forgetpass"> Forget your password?</a>  
+
+                </form>
+            </div>
+
+
+            </div>
+
+
+    </div>
+
+   
+    <script src="jquery.js" type="text/javascript">
+		
+	</script>
+
+	<script type="text/javascript">
+    $(document).ready(function(){
+        $('#one').click(function(){
+        $('#reg1').show();
+        $('#reg2').hide();
+        $('#reg3').hide();
+    })
+    $('#two').click(function(){
+        $('#reg1').hide();
+        $('#reg2').show();
+        $('#reg1').hide();
+    })
+    $('#three').click(function(){
+        $('#reg1').hide();
+        $('#reg2').hide();
+        $('#reg3').show()
+    })
+
+
+      })
+    </script>
+</body>
+</html>

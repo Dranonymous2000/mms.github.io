@@ -1,0 +1,134 @@
+/* the login page*/
+.container2{
+	max-width:100%;
+	 height: 100vh;
+	 background: url(images/bg2.jpg);
+	 background-position: center;
+	 background-size: cover;
+	 padding: 0 7%;
+	 color: white;
+}
+#overlay{
+    background-color:rgba(0,0,0,1);
+    height:610px;
+    }
+/* .navlist{
+        font-weight: 500;
+        font-size: 15px;
+        margin-right: 30px;
+        color: white;
+    } */
+    
+    .this{
+        margin-left: 150px;
+        margin-top: 25px;
+    }
+    .fill{
+        width: 100%;
+        max-width: 540px;
+        background-color: rgba(0,0,0,0.6);
+        margin: 70px auto 50px;
+        padding: 40px 30px 20px;
+        border-radius: 10px;
+    
+    }
+    .enter{
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+    .forgetpass{
+        text-align: center;
+        text-decoration: none;
+        color: white;
+    }
+    /* admin login */
+   
+    
+    .laglogo{
+        width: 50px;
+        height: 50px;
+        margin: 20px 5px 0px 100px;
+        border-radius: 10px;
+    }
+    .lasuth{
+        margin-left: 170px;
+        margin-top: -50px;
+        color: black;
+       font-family: Georgia, 'Times New Roman', Times, serif;
+       font-size: 40px;
+       font-weight: 1000;
+    }
+     .firstframe{
+        width: 100%;
+        height: 100px;
+        background-color:hsla(60, 77%, 31%, 0.976);        
+     }
+     .icon{
+        margin-right: 7px;
+     }
+  
+    @media(max-width:1100px){
+        .lasuth{
+            font-size: 20px;
+        }   
+    }
+    @media(max-width:406px){
+        .lasuth{
+            font-size: 15px;
+        }   
+    }
+    @media(max-width:770px){
+        .option{
+            font-size: 15px;
+        }   
+    }
+     .option{
+        margin-left:15px;
+        margin-bottom: 180px;
+        background-color: lightgrey;
+        
+    
+     }
+     .icons{
+        margin-left: 65px;
+        margin-top: 20px;
+     }
+     .title{
+        
+        margin-top: 10px ;
+        text-align: center;
+
+     }
+    .parent{
+        height: 140px;
+        justify-content: space-around;
+        margin-top: 20px;
+        margin-right: 20px;
+
+    }
+    .child{
+        margin-top: 20px;
+    }
+    /* doctor page */
+    .change{
+        background-color: green !important;
+    }
+    .notify{
+        margin-right: 20px;
+       
+    }
+    .dash{
+
+        background-color: black !important;
+
+    }
+    /* department */
+    .doctor_select{
+    flex: 1;
+	border:none;
+	outline: none;
+	background: transparent;
+	padding: 10px;
+    }
+    
+    
